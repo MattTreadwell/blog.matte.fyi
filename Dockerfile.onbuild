@@ -1,0 +1,6 @@
+FROM node:12-buster
+RUN yarn global add gatsby-cli
+ONBUILD WORKDIR /app
+ONBUILD ADD . ./
+ONBUILD RUN yarn
+ONBUILD RUN gatsby build
